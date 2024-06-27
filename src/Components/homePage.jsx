@@ -1,17 +1,18 @@
 import React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import { BsPersonCircle,BsPerson } from "react-icons/bs";
+// import Stack from '@mui/material/Stack';
+// import Button from '@mui/material/Button';
+// import { BsPersonCircle,BsPerson } from "react-icons/bs";
 // import { BsPerson } from "react-icons/bs";
 import logo from './logo.png';
 import backgroundPicture from './backgroundPicture.png';  
 import { Grid, Box, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 export default function HomePage() {
+  
   const theme = useTheme();
   const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const logoSize = isSmallScreen ? '150px' : isMediumScreen ? '200px' : '300px';
+  const logoSize = isSmallScreen ? '150px' : isMediumScreen ? '200px' : '250px';
 
   return (
   
