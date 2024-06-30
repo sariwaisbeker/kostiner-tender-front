@@ -1,6 +1,6 @@
 import React from 'react';
 
-const One_time= () => {
+const help= () => {
     return (
         <div>
           
@@ -9,4 +9,4 @@ const One_time= () => {
     );
 }
 
-export default One_time;
+export default help;
