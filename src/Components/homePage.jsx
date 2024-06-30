@@ -3,10 +3,11 @@ import React from 'react';
 // import Button from '@mui/material/Button';
 // import { BsPersonCircle,BsPerson } from "react-icons/bs";
 // import { BsPerson } from "react-icons/bs";
-import logo from './logo.png';
-import backgroundPicture from './backgroundPicture.png';  
+import logo from '../image/logo.png';
+import backgroundPicture from '../image/backgroundPicture.png';  
 import { Grid, Box, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import Footer from './footer';
 export default function HomePage() {
   
   const theme = useTheme();
@@ -60,7 +61,6 @@ export default function HomePage() {
         </Grid>
     </Grid>
   </Box>
-  
 
 
  /* <Stack direction="row" spacing={1}>

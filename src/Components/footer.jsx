@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from './logo.png';
+import logo from '../image/logo.png';
+import { Link } from 'react-router-dom';
+
 
 const FooterWrapper = styled.footer`
   background: #5c5c5c;
@@ -121,8 +123,9 @@ const Footer = () => {
           <Column className="col-md-3 mb-4">
             <h3>ניווט</h3>
             <ul className="list-unstyled">
-              <li><a href="#" className="custom-hover">מכרזים לדוגמה</a></li>
-              <li><a href="#" className="custom-hover">מסלולי מנוי</a></li>
+              {/* <li><Link to="/Product" className="custom-hover">מכרזים לדוגמה</Link></li> */}
+              {/* <li><a href="#" className="custom-hover">מסלולי מנוי</a></li> */}
+              <li><Link to="/product" className="custom-hover">מסלולי מנוי</Link></li>
               <li><a href="#" className="custom-hover">ליווי וייעוץ</a></li>
               <li><a href="#" className="custom-hover">אודות</a></li>
               <li><a href="#" className="custom-hover">שאלות ותשובות</a></li>
