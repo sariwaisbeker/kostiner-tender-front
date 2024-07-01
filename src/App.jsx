@@ -36,14 +36,15 @@ import AppRoutes from './router.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import Product from './Components/product.jsx';
 import HomePage from './Components/homePage.jsx';
+import IconStepper from './Components/stepPay.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <div id="root">
         <div className="content">
-          <AppRoutes />
           <HomePage/>
+          <AppRoutes />
         </div>
         <Footer />
       </div>

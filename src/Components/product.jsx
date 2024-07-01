@@ -62,77 +62,88 @@ export default function Product() {
           p: 4,
           borderRadius: 1,
           display: 'flex',
-          flexWrap: 'wrap',
+          flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'center',
           gap: 2,
           position: 'relative'
         }}
       >
+        <IconStepper activeStep={0} />
 
-        {cardData.map((card, index) => (
-          <Card
-            key={index}
-            size="lg"
-            variant="outlined"
-            sx={{
-              minWidth: 360,
-              boxShadow: '0px 3px 6px #00000029',
-              transition: 'transform 0.3s ease',
-              '&:hover': {
-                transform: 'scale(1.02)',
-              },
-            }}
-          >
-            {card.title === "מנוי קבוע" && (
-              <Chip
-                size="sm"
-                variant="outlined"
-                color="warning"
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  margin: '8px',
-                }}
-              >
-                MOST POPULAR
-              </Chip>
-            )}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: 2,
+          }}
+        >
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              size="lg"
+              variant="outlined"
+              sx={{
+                minWidth: 360,
+                boxShadow: '0px 3px 6px #00000029',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.02)',
+                },
+              }}
+            >
+              {card.title === "מנוי קבוע" && (
+                <Chip
+                  size="sm"
+                  variant="outlined"
+                  color="warning"
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    margin: '8px',
+                  }}
+                >
+                  MOST POPULAR
+                </Chip>
+              )}
 
-            <Typography level="h2" textAlign="center">{card.title}</Typography>
-            <Divider inset="none" />
-            <Typography level="h6" textAlign="center">{card.subtitle}</Typography>
-            <Divider inset="none" />
-            <List size="sm" sx={{ mx: 'calc(-1 * var(--ListItem-paddingX))' }}>
-              {card.features.map((feature, index) => (
-                <ListItem key={index} sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Typography sx={{ textAlign: 'center', marginLeft: 'auto', marginRight: '10px' }}>{feature}</Typography>
-                  <ListItemDecorator>
-                    <Check sx={{ color: 'rgba(26,96,104,255)' }} />
-                  </ListItemDecorator>
-                </ListItem>
-              ))}
-            </List>
-            <Divider inset="none" />
-            <CardActions>
-              <Button
-                variant="soft"
-                color="neutral"
-                endDecorator={<KeyboardArrowRight sx={{ color: 'rgb(10, 43, 41)' }} />}
-                sx={{
-                  backgroundColor: 'rgba(26,96,104,255)',
-                  '&:hover': {
-                    backgroundColor: 'rgb(129, 175, 164)',
-                  },
-                  color: '#ffffff',
-                }}
-                onClick={handleNav}
-              >
-                {card.buttonText}
-              </Button>
-            </CardActions>
-          </Card>
-        ))}
+              <Typography level="h2" textAlign="center">{card.title}</Typography>
+              <Divider inset="none" />
+              <Typography level="h6" textAlign="center">{card.subtitle}</Typography>
+              <Divider inset="none" />
+              <List size="sm" sx={{ mx: 'calc(-1 * var(--ListItem-paddingX))' }}>
+                {card.features.map((feature, index) => (
+                  <ListItem key={index} sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography sx={{ textAlign: 'center', marginLeft: 'auto', marginRight: '10px' }}>{feature}</Typography>
+                    <ListItemDecorator>
+                      <Check sx={{ color: 'rgba(26,96,104,255)' }} />
+                    </ListItemDecorator>
+                  </ListItem>
+                ))}
+              </List>
+              <Divider inset="none" />
+              <CardActions>
+                <Button
+                  variant="soft"
+                  color="neutral"
+                  endDecorator={<KeyboardArrowRight sx={{ color: 'rgb(10, 43, 41)' }} />}
+                  sx={{
+                    backgroundColor: 'rgba(26,96,104,255)',
+                    '&:hover': {
+                      backgroundColor: 'rgb(129, 175, 164)',
+                    },
+                    color: '#ffffff',
+                  }}
+                  onClick={handleNav}
+                >
+                  {card.buttonText}
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+        </Box>
       </Box>
     </Modal>
   );

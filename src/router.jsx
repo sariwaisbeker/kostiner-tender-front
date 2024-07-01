@@ -10,15 +10,9 @@ export default function AppRoutes() {
     return (
             <Routes>
                 {/* <Route path="/" element={<MainLayout/>} /> */}
-                <Route path="/product" element={<MainLayout />} />
+                <Route path="/product" element={<Product />} />
                 <Route path="/typeProduct" element={<AutocompleteModal />} />
             </Routes>
     
     );
 }
-const MainLayout = () => (
-    <div>
-        <IconStepper activeStep={0} />
-        <Product/>
-    </div>
-);

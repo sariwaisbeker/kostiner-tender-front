@@ -7,128 +7,122 @@ import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBullete
 import CreditCardRoundedIcon from '@mui/icons-material/CreditCardRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import Box from '@mui/joy/Box';
-import Modal from '@mui/material/Modal'; // Import Modal component from MUI
 
-export default function IconStepper({activeStep }) {
-  console.log("sfvsfs");
+export default function IconStepper({ activeStep }) {
   return (
-    <Modal
-      aria-labelledby="modal-title"
-      aria-describedby="modal-description"
-      sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-    >
-      <Box sx={{ bgcolor: 'transparent', boxShadow: 'none' }}>
-        <Stepper
-          size="lg"
-          position="right"
-          orientation="horizontal"
-          sx={{
-            width: '100%',
-            direction: 'rtl',
-            '--StepIndicator-size': '3rem',
-            '--Step-connectorInset': '0px',
+    <Box sx={{ bgcolor: 'transparent', boxShadow: 'none' }}>
+      <Stepper
+        size="lg"
+        position="right"
+        orientation="horizontal"
+        sx={{
+          width: '100%',
+          direction: 'rtl',
+          '--StepIndicator-size': '3rem',
+          '--Step-connectorInset': '0px',
+          display: 'flex',
+          justifyContent: 'space-between', // Add space between steps
+          [`& .${stepIndicatorClasses.root}`]: {
+            borderWidth: 4,
+            borderColor: 'white',
+            color: 'white',
+            bgcolor: 'transparent',
+          },
+          [`& .${stepClasses.root}::after`]: {
+            height: 4,
+            bgcolor: 'white',
+          },
+          [`& .${stepClasses.completed}`]: {
             [`& .${stepIndicatorClasses.root}`]: {
-              borderWidth: 4,
               borderColor: 'white',
               color: 'white',
               bgcolor: 'transparent',
             },
-            [`& .${stepClasses.root}::after`]: {
-              height: 4,
+            '&::after': {
               bgcolor: 'white',
             },
-            [`& .${stepClasses.completed}`]: {
-              [`& .${stepIndicatorClasses.root}`]: {
-                borderColor: 'white',
-                color: 'white',
-                bgcolor: 'transparent',
-              },
-              '&::after': {
-                bgcolor: 'white',
-              },
+          },
+          [`& .${stepClasses.active}`]: {
+            [`& .${stepIndicatorClasses.root}`]: {
+              borderColor: 'white',
+              color: 'rgba(26,96,104,255)',
+              bgcolor: 'white',
             },
-            [`& .${stepClasses.active}`]: {
-              [`& .${stepIndicatorClasses.root}`]: {
-                borderColor: 'white',
-                color: 'rgba(26,96,104,255)',
-                bgcolor: 'white',
-              },
-            },
-            [`& .${stepClasses.disabled} *`]: {
-              color: 'neutral.outlinedDisabledColor',
-            },
-          }}
-        >
-          <Step
-            completed={activeStep > 0}
-            active={activeStep === 0}
-            indicator={
-              <StepIndicator
-                variant="outlined"
-                position="right"
-                sx={{
-                  bgcolor: activeStep === 0 ? 'white' : 'transparent',
-                }}
-              >
-                <ShoppingCartRoundedIcon
-                  sx={{ color: activeStep === 0 ? 'rgba(26,96,104,255)' : 'white' }}
-                />
-              </StepIndicator>
-            }
-          />
-          <Step
-            completed={activeStep > 1}
-            active={activeStep === 1}
-            indicator={
-              <StepIndicator
-                variant="outlined"
-                position="right"
-                sx={{
-                  bgcolor: activeStep === 1 ? 'white' : 'transparent',
-                }}
-              >
-                <FormatListBulletedRoundedIcon
-                  sx={{ color: activeStep === 1 ? 'rgba(26,96,104,255)' : 'white' }}
-                />
-              </StepIndicator>
-            }
-          />
-          <Step
-            completed={activeStep > 2}
-            active={activeStep === 2}
-            indicator={
-              <StepIndicator
-                variant="outlined"
-                position="right"
-                sx={{
-                  bgcolor: activeStep === 2 ? 'white' : 'transparent',
-                }}
-              >
-                <CreditCardRoundedIcon
-                  sx={{ color: activeStep === 2 ? 'rgba(26,96,104,255)' : 'white' }}
-                />
-              </StepIndicator>
-            }
-          />
-          <Step
-            disabled={activeStep < 3}
-            active={activeStep === 3}
-            indicator={
-              <StepIndicator
-                variant="outlined"
-                position="right"
-                sx={{
-                  bgcolor: activeStep === 3 ? 'white' : 'transparent',
-                }}
-              >
-                <CheckCircleRoundedIcon
-                  sx={{ color: activeStep === 3 ? 'rgba(26,96,104,255)' : 'white' }}
-                />
-              </StepIndicator>
-            }
-          />
-        </Stepper>
-      </Box>
-    </Modal>
+          },
+          [`& .${stepClasses.disabled} *`]: {
+            color: 'neutral.outlinedDisabledColor',
+          },
+        }}
+      >
+        <Step
+          completed={activeStep > 0}
+          active={activeStep === 0}
+          indicator={
+            <StepIndicator
+              variant="outlined"
+              position="right"
+              sx={{
+                bgcolor: activeStep === 0 ? 'white' : 'transparent',
+              }}
+            >
+              <ShoppingCartRoundedIcon
+                sx={{ color: activeStep === 0 ? 'rgba(26,96,104,255)' : 'white' }}
+              />
+            </StepIndicator>
+          }
+        />
+        <Step
+          completed={activeStep > 1}
+          active={activeStep === 1}
+          indicator={
+            <StepIndicator
+              variant="outlined"
+              position="right"
+              sx={{
+                bgcolor: activeStep === 1 ? 'white' : 'transparent',
+              }}
+            >
+              <FormatListBulletedRoundedIcon
+                sx={{ color: activeStep === 1 ? 'rgba(26,96,104,255)' : 'white' }}
+              />
+            </StepIndicator>
+          }
+        />
+        <Step
+          completed={activeStep > 2}
+          active={activeStep === 2}
+          indicator={
+            <StepIndicator
+              variant="outlined"
+              position="right"
+              sx={{
+                bgcolor: activeStep === 2 ? 'white' : 'transparent',
+              }}
+            >
+              <CreditCardRoundedIcon
+                sx={{ color: activeStep === 2 ? 'rgba(26,96,104,255)' : 'white' }}
+              />
+            </StepIndicator>
+          }
+        />
+        <Step
+          disabled={activeStep < 3}
+          active={activeStep === 3}
+          indicator={
+            <StepIndicator
+              variant="outlined"
+              position="right"
+              sx={{
+                bgcolor: activeStep === 3 ? 'white' : 'transparent',
+              }}
+            >
+              <CheckCircleRoundedIcon
+                sx={{ color: activeStep === 3 ? 'rgba(26,96,104,255)' : 'white' }}
+              />
+            </StepIndicator>
+          }
+        />
+      </Stepper>
+    </Box>
   );
 }
